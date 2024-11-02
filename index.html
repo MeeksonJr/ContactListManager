@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact List Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Contact List Manager</h1>
+    
+    <!-- Selector for the action to perform -->
+    <div class="action-selector">
+      <button onclick="showForm('add')">Add Contact</button>
+      <button onclick="showForm('modify')">Modify Contact</button>
+      <button onclick="showForm('delete')">Delete Contact</button>
+      <button onclick="showForm('search')">Search Contact</button>
+    </div>
+
+    <!-- Form section -->
+    <div class="form-section" id="form-section">
+      <!-- Form for Adding a Contact -->
+      <div class="form-container" id="add-form">
+        <h2>Add Contact</h2>
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <button onclick="addContact()">Add Contact</button>
+      </div>
+
+      <!-- Form for Modifying a Contact's Address -->
+      <div class="form-container hidden" id="modify-form">
+        <h2>Modify Contact Address</h2>
+        <input type="text" id="modifyFirstName" placeholder="First Name" required>
+        <input type="text" id="modifyLastName" placeholder="Last Name" required>
+        <input type="text" id="newAddress" placeholder="New Address" required>
+        <button onclick="modifyContact()">Modify Address</button>
+      </div>
+
+      <!-- Form for Deleting a Contact -->
+      <div class="form-container hidden" id="delete-form">
+        <h2>Delete Contact</h2>
+        <input type="text" id="deleteFirstName" placeholder="First Name" required>
+        <input type="text" id="deleteLastName" placeholder="Last Name" required>
+        <button onclick="deleteContact()">Delete Contact</button>
+      </div>
+
+      <!-- Form for Searching a Contact -->
+      <div class="form-container hidden" id="search-form">
+        <h2>Search Contact</h2>
+        <input type="text" id="searchFirstName" placeholder="First Name" required>
+        <input type="text" id="searchLastName" placeholder="Last Name" required>
+        <button onclick="searchContact()">Search</button>
+      </div>
+    </div>
+
+    <!-- Section to Display Contact List -->
+    <div class="contact-list">
+      <h2>Contact List</h2>
+      <div id="contacts"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
